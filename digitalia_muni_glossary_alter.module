@@ -1,0 +1,43 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for digitalia_muni_glossary_alter module.
+ *
+ * @DCG
+ * This file is no longer required in Drupal 8.
+ * @see https://www.drupal.org/node/2217931
+ */
+function digitalia_muni_glossary_alter_search_api_glossary_source_alter(&$source_value) {
+  $replacements = [
+    'À' => 'A',
+    'Á' => 'A',
+    'Ä' => 'A',
+    'Å' => 'A',
+    'Ć' => 'C',
+    'Ç' => 'C',
+    'Ď' => 'D',
+    'Đ' => 'D',
+    'È' => 'E',
+    'É' => 'E',
+    'Ě' => 'E',
+    'Ǵ' => 'G',
+    'Ì' => 'I',
+    'Í' => 'I',
+    'Ī' => 'I',
+    'Ł' => 'L',
+    'Ľ' => 'L',
+    'Ó' => 'O',
+    'Ö' => 'O',
+    'Ś' => 'S',
+    'Ú' => 'U',
+    'Ü' => 'U',
+    'Ů' => 'U',
+    'Ź' => 'Z',
+    'Ż' => 'Z',
+    'Ť' => 'T',
+    'Ň' => 'N',
+    'Ý' => 'Y',
+  ];
+  $source_value = (strtr($source_value, $replacements));
+}
